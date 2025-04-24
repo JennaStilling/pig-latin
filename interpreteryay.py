@@ -74,6 +74,8 @@ class Stack:
         return self.buf[self.sp]
     
 pc = 0 # program counter
+building_string = ""
+building_number = 0
 stack = Stack(256)
 
 while program[pc] != "ALTHAY": # halt
@@ -99,9 +101,13 @@ while program[pc] != "ALTHAY": # halt
         pc += 1
         print(string_literal)
     elif opcode == "EADRAY":
-        number = input()
-        for char in number:
+        _input = input()
+        counter = 0
+        for char in _input:
             stack.push(ord(char)) 
+            counter += 1
+        stack.push(counter)
+        # print(stack.buf[:stack.sp + 1])
     elif opcode == "UMPJAYEQUALYAYEROZAY": # jump if equal
         number = stack.top()
         if number == 0:
@@ -115,13 +121,34 @@ while program[pc] != "ALTHAY": # halt
         else:
             pc += 1
     elif opcode == "ULMAY": # mul
-        a = int(chr(stack.pop()))
-        b = int(chr(stack.pop()))
+        a = (chr(stack.pop()))
+        b = (chr(stack.pop()))
         result = 0
-        for i in range(0,b):
-            result += a
+        for i in range(0,int(b)):
+            result += int(a)
         stack.push(result)
     elif opcode =="ECHOYAY": # echo
-        print(chr(stack.pop()), end="")
+        print(building_string)
     elif opcode == "UPLICATEDAY": # duplicate
         stack.push(stack.top())
+    elif opcode == "UILDBAY":
+        counter = stack.pop()
+        building_string += chr(stack.pop())
+        stack.push(counter)
+    # elif opcode == "OINTERPAY":
+        # number = stack.pop()
+        # print(chr(number))
+    elif opcode == "OPTAY":
+        print(stack.top())
+    elif opcode == "APSWAY":
+        print(stack.buf[:stack.sp + 1])
+        first = stack.pop()
+        second = stack.pop()
+        stack.push(first)
+        stack.push(second)
+        print(stack.buf[:stack.sp + 1])
+    elif opcode == "ISERAY":
+        print()
+    elif opcode == "IZESAY":
+        stack.push(len(stack.buf[:stack.sp + 1]))
+        print(stack.buf[:stack.sp + 1])
