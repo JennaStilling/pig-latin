@@ -150,6 +150,7 @@ while program[pc] != "ALTHAY": # halt
         stack.push(second)
         # print("Swapped ", stack.buf[:stack.sp + 1])
     elif opcode == "ISERAY":
+        size = stack.top()
         print()
     elif opcode == "IZESAY":
         stack.push(len(stack.buf[:stack.sp + 1]))
