@@ -37,14 +37,12 @@ Output: "Hello world"
 ```sh
 python interpreteryay.py helloworld.oink
 ```
-
 **Cat - echos your input**
 Input: phrase
 Output: phrase
 ```sh
 python interpreteryay.py cat.oink
 ```
-
 **Repeater - repeats your input**
 Input 1: character to repeat
 Input 2: # of times to repeat

@@ -86,8 +86,9 @@ while program[pc] != "ALTHAY": # halt
         number = program[pc]
         pc += 1
         stack.push(number)
+        # print(stack.buf[:stack.sp + 1])
     elif opcode == "OPPAY": # pop
-        stack.pop()
+        print(chr(stack.pop()))
     elif opcode == "ADDYAY": # add
         a = stack.pop()
         b = stack.pop()
@@ -96,25 +97,25 @@ while program[pc] != "ALTHAY": # halt
         a = stack.pop()
         b = stack.pop()
         stack.push(b-a)
+        # print(stack.buf[:stack.sp + 1])
     elif opcode == "INTPRAY": # print
         string_literal = program[pc]
         pc += 1
         print(string_literal)
     elif opcode == "EADRAY":
         _input = input()
-        counter = 0
         for char in _input:
             stack.push(ord(char)) 
-            counter += 1
-        stack.push(counter)
         # print(stack.buf[:stack.sp + 1])
     elif opcode == "UMPJAYEQUALYAYEROZAY": # jump if equal
+        # print("Checking equal to 0: ", stack.buf[:stack.sp + 1])
         number = stack.top()
         if number == 0:
             pc = label_tracker[program[pc]]
         else:
             pc += 1
     elif opcode == "UMPJAYEATERGRAYEROZAY": # jump if greater
+        # ("Checking greater than 0: ", stack.buf[:stack.sp + 1])
         number = stack.top()
         if number > 0:
             pc = label_tracker[program[pc]]
@@ -131,6 +132,7 @@ while program[pc] != "ALTHAY": # halt
         print(building_string)
     elif opcode == "UPLICATEDAY": # duplicate
         stack.push(stack.top())
+        # print(stack.buf[:stack.sp + 1])
     elif opcode == "UILDBAY":
         counter = stack.pop()
         building_string += chr(stack.pop())
@@ -139,14 +141,14 @@ while program[pc] != "ALTHAY": # halt
         # number = stack.pop()
         # print(chr(number))
     elif opcode == "OPTAY":
-        print(stack.top())
+        print(stack.pop())
     elif opcode == "APSWAY":
-        print(stack.buf[:stack.sp + 1])
+        # print(stack.buf[:stack.sp + 1])
         first = stack.pop()
         second = stack.pop()
         stack.push(first)
         stack.push(second)
-        print(stack.buf[:stack.sp + 1])
+        # print("Swapped ", stack.buf[:stack.sp + 1])
     elif opcode == "ISERAY":
         print()
     elif opcode == "IZESAY":
