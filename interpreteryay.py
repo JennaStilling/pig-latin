@@ -1,5 +1,5 @@
 import sys
-# Most commments are copied from the video provided, the rest for labeling. Anything from AI is marked with AI
+# Most commments are copied from the video provided, the rest for labeling. Nothing is from AI
 
 # read arguments
 program_filepath = sys.argv[1]
@@ -78,28 +78,28 @@ building_string = ""
 building_number = 0
 stack = Stack(256)
 
-while program[pc] != "ALTHAY": # halt
+while program[pc] != "ALTHAY":
     opcode = program[pc]
     pc +=1
 
-    if opcode == "USHPAY": # push
+    if opcode == "USHPAY":
         number = program[pc]
         pc += 1
         stack.push(number)
         print("Pushed ", stack.buf[:stack.sp + 1])
-    elif opcode == "OPPAY": # pop
+    elif opcode == "OPPAY":
         print(chr(stack.pop()))
-    elif opcode == "ADDYAY": # add
+    elif opcode == "ADDYAY": 
         a = stack.pop()
         b = stack.pop()
         stack.push(a+b)
         print("Added ", stack.buf[:stack.sp + 1])
-    elif opcode == "UBSAY": # sub
+    elif opcode == "UBSAY":
         a = stack.pop()
         b = stack.pop()
         stack.push(b-a)
         print("Subtracted ", stack.buf[:stack.sp + 1])
-    elif opcode == "INTPRAY": # print
+    elif opcode == "INTPRAY":
         string_literal = program[pc]
         pc += 1
         print(string_literal)
@@ -108,23 +108,23 @@ while program[pc] != "ALTHAY": # halt
         for char in _input:
             stack.push(ord(char)) 
         print("Read: ",stack.buf[:stack.sp + 1])
-    elif opcode == "UMPJAYEQUALYAYEROZAY": # jump if equal
+    elif opcode == "UMPJAYEQUALYAYEROZAY": 
         print("Checking equal to 0: ", stack.buf[:stack.sp + 1])
         number = stack.top()
         if number <= 0:
             pc = label_tracker[program[pc]]
         else:
             pc += 1
-    elif opcode == "UMPJAYEATERGRAYEROZAY": # jump if greater
+    elif opcode == "UMPJAYEATERGRAYEROZAY":
         ("Checking greater than 0: ", stack.buf[:stack.sp + 1])
         number = stack.top()
         if number > 0:
             pc = label_tracker[program[pc]]
         else:
             pc += 1
-    elif opcode =="ECHOYAY": # echo
+    elif opcode =="ECHOYAY":
         print(building_string)
-    elif opcode == "UPLICATEDAY": # duplicate
+    elif opcode == "UPLICATEDAY": 
         stack.push(stack.top())
         print("Duplicated ", stack.buf[:stack.sp + 1])
     elif opcode == "UILDBAY":
