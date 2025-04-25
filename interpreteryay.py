@@ -108,7 +108,7 @@ while program[pc] != "ALTHAY": # halt
             stack.push(ord(char)) 
         # print(stack.buf[:stack.sp + 1])
     elif opcode == "UMPJAYEQUALYAYEROZAY": # jump if equal
-        # print("Checking equal to 0: ", stack.buf[:stack.sp + 1])
+        print("Checking equal to 0: ", stack.buf[:stack.sp + 1])
         number = stack.top()
         if number == 0:
             pc = label_tracker[program[pc]]
@@ -150,8 +150,14 @@ while program[pc] != "ALTHAY": # halt
         stack.push(second)
         # print("Swapped ", stack.buf[:stack.sp + 1])
     elif opcode == "ISERAY":
-        size = stack.top()
-        print()
+        if stack.sp > 0:
+            bottom_value = stack.buf[0]  
+            for i in range(stack.sp):
+                stack.buf[i] = stack.buf[i + 1]
+            building_string+=chr(bottom_value)
+        # print(stack.buf[:stack.sp + 1])
     elif opcode == "IZESAY":
         stack.push(len(stack.buf[:stack.sp + 1]))
         print(stack.buf[:stack.sp + 1])
+    elif opcode == "ELETEDAY":
+        stack.pop()

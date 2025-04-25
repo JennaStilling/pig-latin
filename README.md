@@ -23,8 +23,10 @@ Ever wanted to flex that you learned pig latin in 3rd grade? Or maybe you just w
 | OINTERPAY | Pointer | Points the stack pointer to the given location |
 | OPTAY | Top | Prints the top of the stack |
 | APSWAY | Swap | Swaps top two values on stack |
-| ISERAY | Rise | Takes the bottom of the stack and pushes it to the top |
+| ISERAY | Rise | Takes the bottom of the stack, removes it, and adds it to a string literal
 | IZESAY | Size | Takes the current size of the stack and pushes it to the top
+| ELETEDAY | Delete | Removes the top value of the stack without printing it |
+| OVEMAY | Move | Moves stack pointer to the sp
 
 ## File Descriptions
 File Interpreter - Parses the code
