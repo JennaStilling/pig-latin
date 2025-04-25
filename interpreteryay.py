@@ -161,3 +161,9 @@ while program[pc] != "ALTHAY": # halt
                 stack.buf[i] = stack.buf[i + 1]
             building_string += chr(bottom_value)
         print(stack.buf[:stack.sp + 1])
+    elif opcode == "IRDTHAY": 
+        if stack.sp >= 2:
+            top_index = stack.sp
+            third_index = stack.sp - 2
+            stack.buf[top_index], stack.buf[third_index] = stack.buf[third_index], stack.buf[top_index]
+            print("Swapped first and third: ", stack.buf[:stack.sp + 1])

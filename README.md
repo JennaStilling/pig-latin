@@ -26,6 +26,7 @@ Ever wanted to flex that you learned pig latin in 3rd grade? Or maybe you just w
 | ELETEDAY | Delete | Removes the top value of the stack without printing it |
 | ISERAY | Rise | Takes the bottom of the stack and pushes it to the top |
 | EADRAY | Read | Reads the input of a user and pushes each charater onto the stack as its ascii character | 
+| IRDTHAY | Third | Swaps the top and third from top element in the stack |
 
 ## File Descriptions
 File Interpreter - Parses the code
