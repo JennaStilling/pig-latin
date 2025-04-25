@@ -13,20 +13,19 @@ Ever wanted to flex that you learned pig latin in 3rd grade? Or maybe you just w
 | ADDYAY | Add | Pops the top two values on the stack, adds them together, then pushes the sum onto the stack |
 | UBSAY | Sub | Pops the top two values on the stack, subtracts them, then pushes the difference onto the stack |
 | INTPRAY | Print | Prints the string literal passed in as a parameter |
-| UMPJAYEQUALYAYEROZAY | Jump Equal Zero | Jumps to the indicated label if the top of the stack has a decimal value equal to 0 |
+| UMPJAYEQUALYAYEROZAY | Jump Equal Zero | Jumps to the indicated label if the top of the stack has a decimal value equal to or less than 0 |
 | UMPJAYEATERGRAYEROZAY | Jump Greater Zero | Jumps to the indicated label if the top of the stack has a decimal value greater than 0 |
-| ULMAY | MAY | Pops then multiplies the top two values on the stack together and pushes the product to the stack |
 | UPLICATEDAY | Duplicate | Duplicates the top of the stack and pushes the value onto the stack |
 | ALTHAY | Halt | Stops the program from running |
 | UILDBAY | Build | Takes the value of the character at the provided location and adds it to a string literal |
 | ECHOYAY | Echo | Prints the built string literal |
-| OINTERPAY | Pointer | Points the stack pointer to the given location |
 | OPTAY | Top | Prints the top of the stack |
 | APSWAY | Swap | Swaps top two values on stack |
-| ISERAY | Rise | Takes the bottom of the stack, removes it, and adds it to a string literal
+| EVERSERAY | Reverse | Takes the bottom of the stack, removes it, and adds it to a string literal
 | IZESAY | Size | Takes the current size of the stack and pushes it to the top
 | ELETEDAY | Delete | Removes the top value of the stack without printing it |
-| OVEMAY | Move | Moves stack pointer to the sp
+| ISERAY | Rise | Takes the bottom of the stack and pushes it to the top |
+| EADRAY | Read | Reads the input of a user and pushes each charater onto the stack as its ascii character | 
 
 ## File Descriptions
 File Interpreter - Parses the code
