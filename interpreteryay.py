@@ -75,13 +75,11 @@ class Stack:
     
 pc = 0 # program counter
 building_string = ""
-building_number = 0
 stack = Stack(256)
 
 while program[pc] != "ALTHAY":
     opcode = program[pc]
     pc +=1
-
     if opcode == "USHPAY":
         number = program[pc]
         pc += 1

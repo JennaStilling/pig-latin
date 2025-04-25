@@ -8,18 +8,18 @@ Ever wanted to flex that you learned pig latin in 3rd grade? Or maybe you just w
 
 | Keyword | English Transaltion | Action |
 | ------ | ------ | ------ |
-| USHPAY | Push | Pushes the ascii value of a character onto the stack |
+| USHPAY \[character or phrase\] | Push | Pushes the decimal value of a character onto the stack |
 | OPPAY | Pop | Pops the value on the top of the stack and prints it |
 | ADDYAY | Add | Pops the top two values on the stack, adds them together, then pushes the sum onto the stack |
 | UBSAY | Sub | Pops the top two values on the stack, subtracts them, then pushes the difference onto the stack |
 | INTPRAY | Print | Prints the string literal passed in as a parameter |
-| UMPJAYEQUALYAYEROZAY | Jump Equal Zero | Jumps to the indicated label if the top of the stack has a decimal value equal to or less than 0 |
-| UMPJAYEATERGRAYEROZAY | Jump Greater Zero | Jumps to the indicated label if the top of the stack has a decimal value greater than 0 |
+| UMPJAYEQUALYAYEROZAY \[label\] | Jump Equal Zero | Jumps to the indicated label if the top of the stack has a decimal value equal to or less than 0 |
+| UMPJAYEATERGRAYEROZAY \[label\] | Jump Greater Zero | Jumps to the indicated label if the top of the stack has a decimal value greater than 0 |
 | UPLICATEDAY | Duplicate | Duplicates the top of the stack and pushes the value onto the stack |
 | ALTHAY | Halt | Stops the program from running |
 | UILDBAY | Build | Takes the value of the character at the provided location and adds it to a string literal |
 | ECHOYAY | Echo | Prints the built string literal |
-| OPTAY | Top | Prints the top of the stack |
+| OPTAY | Top | Prints the top of the stack (does the same as OPPAY) |
 | APSWAY | Swap | Swaps top two values on stack |
 | EVERSERAY | Reverse | Takes the bottom of the stack, removes it, and adds it to a string literal
 | IZESAY | Size | Takes the current size of the stack and pushes it to the top
@@ -64,4 +64,30 @@ Input: phrase
 Output: esarhp (your reversed phrase)
 ```sh
 python interpreteryay.py reversestring.oink
+```
+
+## Example Code
+**Pushing Value on Stack**
+```sh
+USHPAY 48
+```
+or
+```sh
+EADRAY # in which the user would be prompted for an input when the compiler reaches this line
+```
+
+**Jumping to a Label in Code**
+```sh
+LOOP:
+APSWAY
+UPLICATEDAY
+OPPAY
+APSWAY
+USHPAY 1
+UBSAY
+UMPJAYEQUALYAYEROZAY END
+UMPJAYEATERGRAYEROZAY LOOP
+
+END:
+ALTHAY
 ```
